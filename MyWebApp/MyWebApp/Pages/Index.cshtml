@@ -1,5 +1,5 @@
 @page
-@model MyWebApp.Pages.Home
+@model MyWebApp.Pages.Index
 
 @{
     ViewBag.Title = "This is a test site";
@@ -11,3 +11,9 @@
         This is a test site
     </h1>
 </div>
+
+<form method="post">
+    <label class="govuk-label--m">Enter your name</label>
+    <input class ="govuk-input"type="text" name="getName" />
+    <input class ="govuk-button"type="submit" />
+</form>
