@@ -9,15 +9,25 @@ namespace MyWebApp.Pages
 {
     public class Index : PageModel
     {
-        public string testField { get; set; }
-
+       
+        public bool IsEmpty;
         public void OnGet()
         {
-            testField = System.DateTime.Now.ToString();
+           
         }
 
         public IActionResult OnPost(string getName)
         {
+            if (string.IsNullOrEmpty(getName))
+            {
+                IsEmpty = true;
+                return Page();
+
+            }
+
+            
+
+
             return RedirectToPage("./Hello", new { name = getName });
         }
     }

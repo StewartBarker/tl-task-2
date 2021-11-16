@@ -1,10 +1,45 @@
 @page
 @model MyWebApp.Pages.Index
 
-@{
-    ViewBag.Title = "This is a test site";
-    Layout = "_Layout";
-}
+@{ ViewBag.Title = "This is a test site";
+    Layout = "_Layout"; }
+
+@if (Model.IsEmpty)
+{
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#name-input">Enter your name</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                <div class="govuk-form-group govuk-form-group--error">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                When was your passport issued?
+                            </h1>
+                        </legend>
+                        <div id="passport-issued-hint" class="govuk-hint">
+                            For example, 27 3 2007
+                        </div>
+                        <span id="passport-issued-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> The date your passport was issued must be in the past
+                        </span>
+                        <div class="govuk-date-input" id="passport-issued">
+                            
+                        </div>
+
+                    </fieldset>
+                </div>}
+
+
 
 <div class="govuk-grid-row">
     <h1 class="govuk-heading-l">
@@ -14,6 +49,6 @@
 
 <form method="post">
     <label class="govuk-label--m">Enter your name</label>
-    <input class ="govuk-input"type="text" name="getName" />
-    <input class ="govuk-button"type="submit" />
+    <input id="name-input" class="govuk-input" type="text" name="getName" />
+    <input class="govuk-button" type="submit" />
 </form>
