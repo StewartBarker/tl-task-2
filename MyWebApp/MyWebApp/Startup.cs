@@ -1,3 +1,5 @@
+using Data;
+using Data.Mock;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +22,7 @@ namespace MyWebApp
             services.AddControllersWithViews(options => options.Filters.Add(
                     new AutoValidateAntiforgeryTokenAttribute()))
                 .AddSessionStateTempDataProvider();
+            services.AddSingleton<IProjects, MockProjectRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
