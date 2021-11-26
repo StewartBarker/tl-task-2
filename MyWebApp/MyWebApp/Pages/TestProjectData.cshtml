@@ -1,0 +1,22 @@
+@page
+@model MyWebApp.Pages.TestProjectData
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+    TEST PAGE
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    @foreach (var project in Model.ProjectUrns)
+    {
+        <a href="#" class="govuk-link">@project</a>
+    }
+</div>
+</body>
+</html>
