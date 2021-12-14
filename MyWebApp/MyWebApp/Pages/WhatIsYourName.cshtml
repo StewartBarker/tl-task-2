@@ -1,0 +1,39 @@
+@page
+@model MyWebApp.Pages.WhatIsYourName
+
+@{ ViewBag.Title = "This is a test site";
+    Layout = "_Layout"; }
+
+@if (Model.IsEmpty)
+{
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+    <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                <a href="#name-input">Enter your name</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+}
+
+
+
+<div class="govuk-grid-row">
+    <h1 class="govuk-heading-l">
+        This is a test site
+    </h1>
+    <a class="govuk-link" href ="https://localhost:44317/benefitsAndOtherFactors">Go to Benefits Page</a>
+</div>
+
+<form method="post">
+
+    <label class="govuk-label--m">Enter your name</label>
+    <input class ="govuk-input"type="text" name="getName" />
+    <input class ="govuk-button"type="submit" />
+</form>

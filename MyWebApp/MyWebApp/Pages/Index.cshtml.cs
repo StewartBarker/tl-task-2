@@ -1,34 +1,24 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using Data;
+using Data.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MyWebApp.Pages
 {
     public class Index : PageModel
     {
-       
-        public bool IsEmpty;
+        private readonly IProjects _projectRepository;
+
+        public Index(IProjects projectRepository)
+        {
+            _projectRepository = projectRepository;
+        }
+        
+        public List<ProjectSearchResult> Projects;
+        public int Page { get; set; }
         public void OnGet()
         {
-           
-        }
-
-        public IActionResult OnPost(string getName)
-        {
-            if (string.IsNullOrEmpty(getName))
-            {
-                IsEmpty = true;
-                return Page();
-
-            }
-
-            
-
-
-            return RedirectToPage("./Hello", new { name = getName });
+            Projects = _projectRepository.GetProjects().Result.Result;
         }
     }
 }
