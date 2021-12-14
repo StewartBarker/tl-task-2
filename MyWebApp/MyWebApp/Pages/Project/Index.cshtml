@@ -25,7 +25,7 @@
             By completing the following sections, you can create a project template that will help you prepare for an advisory board meeting.
         </p>
         <p class="govuk-body">You can complete them in any order.</p>
-        <p class="govuk-body">‘Reference only’ sections get their information from other sources and cannot be changed here.</p>
+        <p class="govuk-body">ï¿½Reference onlyï¿½ sections get their information from other sources and cannot be changed here.</p>
         <hr class="govuk-section-break govuk-section-break--m">
     </div>
 </div>
@@ -40,27 +40,27 @@
                 <ul class="moj-task-list__items govuk-!-padding-left-0">
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="features" asp-controller="Features" asp-action="Index" asp-route-urn="@Model.Project.Urn" data-test="transfer-features">Features of the transfer</a>
+                            <a class="govuk-link" aria-describedby="features" asp-page="Features/Index" asp-route-urn="@Model.Project.Urn" data-test="transfer-features">Features of the transfer</a>
                         </span><projectstatus id="features" status="@Model.FeatureTransferStatus"></projectstatus>
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="dates" asp-controller="TransferDates" asp-action="Index" asp-route-urn="@Model.Project.Urn" data-test="transfer-dates">Set transfer dates</a>
+                            <a class="govuk-link" aria-describedby="dates" asp-page="TransferDates/Index" asp-route-urn="@Model.Project.Urn" data-test="transfer-dates">Set transfer dates</a>
                         </span><projectstatus id="dates" status="@Model.TransferDatesStatus"></projectstatus>
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="benefits" asp-controller="Benefits" asp-action="Index" asp-route-urn="@Model.Project.Urn" data-test="transfer-benefits">Benefits and other factors</a>
+                            <a class="govuk-link" aria-describedby="benefits" asp-page="Benefits/Index" asp-route-urn="@Model.Project.Urn" data-test="transfer-benefits">Benefits and other factors</a>
                         </span><projectstatus id="benefits" status="@Model.BenefitsAndOtherFactorsStatus"></projectstatus>
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="rationale" asp-controller="Rationale" asp-action="Index" asp-route-urn="@Model.Project.Urn" data-test="transfer-rationale">Rationale</a>
+                            <a class="govuk-link" aria-describedby="rationale" asp-page="RationaleIndex" asp-route-urn="@Model.Project.Urn" data-test="transfer-rationale">Rationale</a>
                         </span><projectstatus id="rationale" , status="@Model.RationaleStatus"></projectstatus>
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="academyandtrustinformation" asp-controller="AcademyAndTrustInformation" asp-action="Index" asp-route-urn="@Model.Project.Urn" data-test="academy-trust-information">
+                            <a class="govuk-link" aria-describedby="academyandtrustinformation" asp-page="AcademyAndTrustInformation/Index" asp-route-urn="@Model.Project.Urn" data-test="academy-trust-information">
                                 Academy and trust information and project dates
                             </a>
                         </span><projectstatus id="academyandtrustinformation" , status="@Model.AcademyAndTrustInformationStatus()"></projectstatus>

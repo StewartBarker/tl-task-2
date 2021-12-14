@@ -9,6 +9,7 @@ namespace MyWebApp.Pages.Project
     {
         public string OutgoingAccademyUrn { get; set; }
         public string OutgoingAccademyName { get; set; }
+        public ProjectStatuses FeatureTransferStatus { get; set; }
 
         public void OnGet()
         {
