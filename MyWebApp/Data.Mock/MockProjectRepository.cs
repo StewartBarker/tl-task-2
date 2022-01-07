@@ -18,7 +18,7 @@ namespace Data.Mock
         private const string EmptyProjectUrn = "0002";
         private const string EmptyProjectNumber = "AT-0002-EMPTY";
 
-        public MockProjectRepository(ILogger<MockProjectRepository> logger)
+        public MockProjectRepository(ILogger<MockProjectRepository> logger = null)
         {
             _logger = logger;
             _projects = new List<Project> { PopulatedProject(), EmptyProject() };
