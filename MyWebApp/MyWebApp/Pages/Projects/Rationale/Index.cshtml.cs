@@ -6,10 +6,18 @@ namespace MyWebApp.Pages.Projects.Rationale
 {
     public class Index : PageModel
     {
+        [BindProperty(SupportsGet = true)]
         public string Urn { get; set; }
+        public string OutgoingAcademyUrn { get; set; }
+        public string ProjectRationale { get; set; }
+        public string TrustOrSponsorRationale { get; set; }
+        public bool ReturnToPreview { get; set; }
         public void OnGet()
         {
-
+            var projectRepository = new MockProjectRepository();
+            var project = projectRepository.GetByUrn(Urn);
+            
+            ProjectRationale = project.Result.Result.Rationale.Project;
         }
     }
 }

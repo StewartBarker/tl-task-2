@@ -20,4 +20,8 @@
       <_ContentIncludedByDefault Remove="Pages\Rationale\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Pages\Rationale\Index.cshtml" />
+    </ItemGroup>
+
 </Project>
