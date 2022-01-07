@@ -1,3 +1,4 @@
+using Data;
 using Data.Models;
 using Data.Models.KeyStagePerformance;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -7,6 +8,12 @@ namespace MyWebApp.Pages.Project
 {
     public class Index : PageModel
     {
+        private readonly IProjects _projectRepository;
+
+        public Index(IProjects projectRepository)
+        {
+            _projectRepository = projectRepository;
+        }
         public string OutgoingAccademyUrn { get; set; }
         public string OutgoingAccademyName { get; set; }
         public string Project { get; set; }
@@ -22,9 +29,17 @@ namespace MyWebApp.Pages.Project
 
         public ProjectStatuses FeatureTransferStatus { get; set; }
 
-        public void OnGet()
+        public void OnGet(string urn)
         {
-            
+            Urn = urn;
+            var result = _projectRepository.GetByUrn(Urn).Result;
+
+            if (result.IsValid)
+            {
+                OutgoingAccademyUrn = result?.Result?.OutgoingAcademyUrn;
+                OutgoingAccademyName = result?.Result?.OutgoingAcademyName;
+            }
+
         }
     }
   
