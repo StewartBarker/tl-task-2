@@ -13,9 +13,9 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-        <span class="govuk-caption-l">
-            URN @Model.OutgoingAcademyUrn
-        </span>
+        @* <span class="govuk-caption-l"> *@
+        @*     URN @Model.OutgoingAcademyUrn *@
+        @* </span> *@
         <h1 class="govuk-heading-l">
             Provide the rational for the transfer
         </h1>
@@ -26,48 +26,48 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    What is the rationale for the project?
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    @if (string.IsNullOrEmpty(Model.ProjectRationale))
-                    {
-                        <span class="dfe-empty-tag">Empty</span>
-                    }
-                    else
-                    {
-                        <span class="dfe-text-area-display">@Model.ProjectRationale</span>
-                    }
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" asp-page="Projects/Rationale/Project" data-test="project-rationale"
-                       asp-route-urn="@Model.Urn" asp-route-returnToPreview="@(Model.ReturnToPreview  ? "true" : null)">
-                        Change<span class="govuk-visually-hidden"> rationale for project</span>
-                    </a>
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Why was the incoming trust or sponsor chosen?
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    @if (string.IsNullOrEmpty(Model.TrustOrSponsorRationale))
-                    {
-                        <span class="dfe-empty-tag">Empty</span>
-                    }
-                    else
-                    {
-                        <span class="dfe-text-area-display">@Model.TrustOrSponsorRationale</span>
-                    }
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" asp-page="Projects/Rationale/TrustOrSponsor" data-test="trust-rationale"
-                       asp-route-urn="@Model.Urn" asp-route-returnToPreview="@(Model.ReturnToPreview  ? "true" : null)">
-                        Change<span class="govuk-visually-hidden"> rationale for the trust or sponsor</span>
-                    </a>
-                </dd>
-            </div>
+            @* <div class="govuk-summary-list__row"> *@
+            @*     <dt class="govuk-summary-list__key"> *@
+            @*         What is the rationale for the project? *@
+            @*     </dt> *@
+            @*     <dd class="govuk-summary-list__value"> *@
+            @*         @if (string.IsNullOrEmpty(Model.ProjectRationale)) *@
+            @*         { *@
+            @*             <span class="dfe-empty-tag">Empty</span> *@
+            @*         } *@
+            @*         else *@
+            @*         { *@
+            @*             <span class="dfe-text-area-display">@Model.ProjectRationale</span> *@
+            @*         } *@
+            @*     </dd> *@
+            @*     <dd class="govuk-summary-list__actions"> *@
+            @*         <a class="govuk-link" asp-page="Projects/Rationale/Project" data-test="project-rationale" *@
+            @*            asp-route-urn="@Model.Urn" asp-route-returnToPreview="@(Model.ReturnToPreview  ? "true" : null)"> *@
+            @*             Change<span class="govuk-visually-hidden"> rationale for project</span> *@
+            @*         </a> *@
+            @*     </dd> *@
+            @* </div> *@
+            @* <div class="govuk-summary-list__row"> *@
+            @*     <dt class="govuk-summary-list__key"> *@
+            @*         Why was the incoming trust or sponsor chosen? *@
+            @*     </dt> *@
+            @*     <dd class="govuk-summary-list__value"> *@
+            @*         @if (string.IsNullOrEmpty(Model.TrustOrSponsorRationale)) *@
+            @*         { *@
+            @*             <span class="dfe-empty-tag">Empty</span> *@
+            @*         } *@
+            @*         else *@
+            @*         { *@
+            @*             <span class="dfe-text-area-display">@Model.TrustOrSponsorRationale</span> *@
+            @*         } *@
+            @*     </dd> *@
+            @*     <dd class="govuk-summary-list__actions"> *@
+            @*         <a class="govuk-link" asp-page="Projects/Rationale/TrustOrSponsor" data-test="trust-rationale" *@
+            @*            asp-route-urn="@Model.Urn" asp-route-returnToPreview="@(Model.ReturnToPreview  ? "true" : null)"> *@
+            @*             Change<span class="govuk-visually-hidden"> rationale for the trust or sponsor</span> *@
+            @*         </a> *@
+            @*     </dd> *@
+            @* </div> *@
         </dl>
         <form  asp-route-id="@Model.Urn">
             <button class="govuk-button govuk-!-margin-top-6">Confirm and continue</button>
