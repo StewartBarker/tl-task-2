@@ -9,7 +9,7 @@
 
 @section BeforeMain
 {
-    <a class="govuk-back-link" asp-page="Index">Back to transfer projects</a>
+    <a class="govuk-back-link" asp-page="/Index">Back to transfer projects</a>
 }
 
 <div class="govuk-grid-row">
@@ -45,7 +45,7 @@
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="dates" asp-page="TransferDates/Index" asp-route-urn="@Model.Urn" data-test="transfer-dates">Set transfer dates</a>
+                            <a class="govuk-link" aria-describedby="dates" asp-page="/Projects/TransferDates/Index" asp-route-urn="@Model.Urn" data-test="transfer-dates">Set transfer dates</a>
                         </span><projectstatus id="dates" status="@Model.TransferDatesStatus"></projectstatus>
                     </li>
                     <li class="moj-task-list__item">
