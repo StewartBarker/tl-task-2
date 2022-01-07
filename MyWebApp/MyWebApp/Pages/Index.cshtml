@@ -6,12 +6,12 @@
     ViewData["Title"] = null;
     Layout = "Shared/_Layout";
     var startingPage = 1;
-    if (Model.Page - 5 > 1) { startingPage = Model.Page - 5; }
-    var hasPreviousPage = Model.Page > 1;
+    if (Model.PageNumber - 5 > 1) { startingPage = Model.PageNumber - 5; }
+    var hasPreviousPage = Model.PageNumber > 1;
     var hasNextPage = Model.Projects.Count == 10;
 
-    var previousPage = Model.Page - 1;
-    var nextPage = Model.Page + 1;
+    var previousPage = Model.PageNumber - 1;
+    var nextPage = Model.PageNumber + 1;
 }
 
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
@@ -44,7 +44,7 @@
             <div class="dfe-application-card">
                 <div class="dfe-application-card--project-info">
                     <h3 class="govuk-heading-m">
-                        <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-right-1" asp-page="Project/Index" asp-route-id="@project.Urn">
+                        <a class="govuk-link govuk-link--no-visited-state govuk-!-margin-right-1" asp-page="Projects/Index" asp-route-urn="@project.Urn">
                             @project.OutgoingAcademyName
                         </a>
                         <span class="govuk-caption-l govuk-!-display-inline">
@@ -65,14 +65,14 @@
                     <li class="moj-pagination__item  moj-pagination__item--prev">
                         <a class="moj-pagination__link" asp-page="Index" asp-route-page="@previousPage">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
                     </li>
-                    @for (var i = startingPage; i < Model.Page; i++)
+                    @for (var i = startingPage; i < Model.PageNumber; i++)
                     {
                         <li class="moj-pagination__item">
                             <a asp-page="Index" asp-route-page="@i" class="moj-pagination__link">@i</a>
                         </li>
                     }
                 }
-                <li class="moj-pagination__item moj-pagination__item--active">@Model.Page</li>
+                <li class="moj-pagination__item moj-pagination__item--active">@Model.PageNumber</li>
                 @if (hasNextPage)
                 {
                     <li class="moj-pagination__item">

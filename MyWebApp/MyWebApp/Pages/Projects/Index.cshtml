@@ -1,5 +1,5 @@
-@page
-@model MyWebApp.Pages.Project.Index
+@page "project/{urn}"
+@model MyWebApp.Pages.Projects.Index
 
 @{
     Layout = "Shared/_Layout";
@@ -9,7 +9,7 @@
 
 @section BeforeMain
 {
-    <a class="govuk-back-link" asp-controller="Home" asp-action="Index">Back to transfer projects</a>
+    <a class="govuk-back-link" asp-page="Index">Back to transfer projects</a>
 }
 
 <div class="govuk-grid-row">
@@ -50,12 +50,12 @@
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="benefits" asp-page="Benefits/Index" asp-route-urn="@Model.Urn" data-test="transfer-benefits">Benefits and other factors</a>
+                            <a class="govuk-link" aria-describedby="benefits" asp-page="/Projects/BenefitsAndOtherFactors/Index" asp-route-urn="@Model.Urn" data-test="transfer-benefits">Benefits and other factors</a>
                         </span><projectstatus id="benefits" status="@Model.BenefitsAndOtherFactorsStatus"></projectstatus>
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="rationale" asp-page="RationaleIndex" asp-route-urn="@Model.Urn" data-test="transfer-rationale">Rationale</a>
+                            <a class="govuk-link" aria-describedby="rationale" asp-page="/Projects/Rationale/Index" asp-route-urn="@Model.Urn" data-test="transfer-rationale">Rationale</a>
                         </span><projectstatus id="rationale" , status="@Model.RationaleStatus"></projectstatus>
                     </li>
                     <li class="moj-task-list__item">
@@ -67,19 +67,19 @@
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="general-information" asp-controller="GeneralInformation" asp-action="Index" asp-route-id="@Model.Urn" data-test="general-information">
+                            <a class="govuk-link" aria-describedby="general-information" asp-page="Projects/GeneralInformation/Index" asp-route-id="@Model.Urn" data-test="general-information">
                                 General information
                             </a>
                         </span><strong class="govuk-tag govuk-tag--grey moj-task-list__tag" id="general-information">Reference only</strong>
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="pupil-numbers" asp-controller="PupilNumbers" asp-action="Index" asp-route-id="@Model.Urn" data-test="pupil-numbers">Pupil numbers</a>
+                            <a class="govuk-link" aria-describedby="pupil-numbers" asp-page="Projects/PupilNumbers/Index" asp-route-id="@Model.Urn" data-test="pupil-numbers">Pupil numbers</a>
                         </span><strong class="govuk-tag govuk-tag--grey moj-task-list__tag" id="pupil-numbers">Reference only</strong>
                     </li>
                     <li class="moj-task-list__item">
                         <span class="moj-task-list__task-name">
-                            <a class="govuk-link" aria-describedby="ofsted-report" asp-controller="LatestOfstedJudgement" asp-action="Index" asp-route-id="@Model.Urn" data-test="ofsted">Latest Ofsted report</a>
+                            <a class="govuk-link" aria-describedby="ofsted-report" asp-page="Projects/LatestOfstedJudgement/Index" asp-route-id="@Model.Urn" data-test="ofsted">Latest Ofsted report</a>
                         </span><strong class="govuk-tag govuk-tag--grey moj-task-list__tag" id="ofsted-report">Reference only</strong>
                     </li>
                     @if (Model.HasKeyStage2PerformanceInformation)
@@ -124,7 +124,7 @@
             <form asp-page="HtbDocument/preview" asp-route-id="@Model.Urn" method="get">
                 <button class="govuk-button" data-module="govuk-button" data-test="preview-htb">Preview project template</button>
             </form>
-            <form asp-controller="HeadteacherBoard" asp-action="Download" asp-route-id="@Model.Urn" method="get">
+            <form asp-page="HtbDocument/Download" asp-route-id="@Model.Urn" method="get">
                 <button class="govuk-button govuk-button--secondary" data-module="govuk-button" data-test="generate-htb">Generate project template</button>
             </form>
         </div>

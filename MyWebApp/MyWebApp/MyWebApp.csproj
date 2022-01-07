@@ -15,4 +15,9 @@
       <ProjectReference Include="..\Data.Mock\Data.Mock.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\BenefitsAndOtherFactors\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Rationale\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

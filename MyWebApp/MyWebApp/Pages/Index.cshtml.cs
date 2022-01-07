@@ -15,7 +15,7 @@ namespace MyWebApp.Pages
         }
         
         public List<ProjectSearchResult> Projects;
-        public int Page { get; set; }
+        public int PageNumber { get; set; }
         public void OnGet()
         {
             Projects = _projectRepository.GetProjects().Result.Result;

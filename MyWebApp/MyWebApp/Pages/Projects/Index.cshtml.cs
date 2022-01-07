@@ -1,10 +1,8 @@
 using Data;
 using Data.Models;
-using Data.Models.KeyStagePerformance;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MyWebApp.Pages.Project;
 
-namespace MyWebApp.Pages.Project
+namespace MyWebApp.Pages.Projects
 {
     public class Index : PageModel
     {
@@ -28,8 +26,9 @@ namespace MyWebApp.Pages.Project
 
         public ProjectStatuses FeatureTransferStatus { get; set; }
 
-        public void OnGet()
+        public void OnGet(string urn)
         {
+            Urn = urn;
             var result = _projectRepository.GetByUrn(Urn).Result;
 
             if (result.IsValid)
