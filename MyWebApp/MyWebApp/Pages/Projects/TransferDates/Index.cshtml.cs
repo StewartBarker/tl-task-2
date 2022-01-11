@@ -33,6 +33,12 @@ namespace MyWebApp.Pages.Projects.TransferDates
             FirstDiscussedDate = DateHelpers.ConvertDateToGovukDate(project.Result.Result.Dates?.FirstDiscussed);
             HasFirstDiscussedDate = project.Result.Result.Dates?.HasFirstDiscussedDate;
 
+            HtbDate = DateHelpers.ConvertDateToGovukDate(project.Result.Result.Dates?.Htb);
+            HasHtbDate = project.Result.Result.Dates?.HasHtbDate;
+
+            TargetDate = DateHelpers.ConvertDateToGovukDate(project.Result.Result.Dates?.Target);
+            HasTargetDate = project.Result.Result.Dates?.HasTargetDate;
+
         }
     }
 }

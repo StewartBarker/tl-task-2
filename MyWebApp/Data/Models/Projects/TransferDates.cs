@@ -9,5 +9,6 @@ namespace Data.Models.Projects
         public bool? HasFirstDiscussedDate { get; set; }
         public bool? HasHtbDate { get; set; }
         public bool? HasTargetDateForTransfer { get; set; }
+        public bool HasTargetDate { get; set; }
     }
 }
