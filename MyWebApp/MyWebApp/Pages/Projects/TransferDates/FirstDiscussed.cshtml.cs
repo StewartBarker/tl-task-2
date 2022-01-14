@@ -1,13 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
+using Data.Mock;
 
 namespace MyWebApp.Pages.Projects.TransferDates
 {
     public class FirstDiscussedModel : PageModel
     {
 
-
+        [BindProperty(SupportsGet = true)]
         public string Urn { get; set; }
         public DateTime FirstDiscussed { get; set; }
 
@@ -19,9 +20,11 @@ namespace MyWebApp.Pages.Projects.TransferDates
 
         public bool UnknownDate { get; set; }
 
-
         public void OnGet()
         {
+            var projectRepository = new MockProjectRepository();
+            var project = projectRepository.GetByUrn(Urn);
+            FirstDiscussed = DateTime.Parse(project.Result.Result.Dates.FirstDiscussed);
         }
     }
 }
