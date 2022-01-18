@@ -20,7 +20,7 @@ namespace MyWebApp.Pages.Projects.TransferDates
         {
             var projectRepository = new MockProjectRepository();
             var project = projectRepository.GetByUrn(Urn);
-            FirstDiscussed = DateTime.Parse(project.Result.Result.Dates.FirstDiscussed);
+            FirstDiscussed = DateTime.Parse(project.Result.Result.Dates.UnknownDate);
         }
 
         public void onPost()

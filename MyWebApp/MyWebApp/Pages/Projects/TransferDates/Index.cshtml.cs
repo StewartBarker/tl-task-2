@@ -30,7 +30,7 @@ namespace MyWebApp.Pages.Projects.TransferDates
             var projectRepository = new MockProjectRepository();
             var project = projectRepository.GetByUrn(Urn);
 
-            FirstDiscussedDate = DateHelpers.ConvertDateToGovukDate(project.Result.Result.Dates?.FirstDiscussed);
+            FirstDiscussedDate = DateHelpers.ConvertDateToGovukDate(project.Result.Result.Dates?.UnknownDate);
             HasFirstDiscussedDate = project.Result.Result.Dates?.HasFirstDiscussedDate;
 
             HtbDate = DateHelpers.ConvertDateToGovukDate(project.Result.Result.Dates?.Htb);
